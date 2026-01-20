@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let Me Perplexity That For You</title>
+    <meta name="description" content="A passive-aggressive way to help people discover Perplexity AI">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Let Me Perplexity That For You">
+    <meta property="og:description" content="A passive-aggressive way to help people discover Perplexity AI">
+    <meta property="og:image" content="assets/perplexity-logo.svg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Let Me Perplexity That For You">
+    <meta name="twitter:description" content="A passive-aggressive way to help people discover Perplexity AI">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/perplexity-logo.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+
+    <!-- Google Analytics (optional) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+    <!-- Homepage View -->
+    <div id="homepage" class="view">
+        <div class="container">
+            <header class="header">
+                <img src="assets/perplexity-logo.svg" alt="Perplexity" class="logo">
+                <h1 class="title">Let Me Perplexity That For You</h1>
+                <p class="subtitle">A passive-aggressive way to help people discover Perplexity AI</p>
+            </header>
+
+            <form id="query-form" class="query-form">
+                <label for="query-input" class="query-label">What do you want them to ask Perplexity?</label>
+                <input
+                    type="text"
+                    id="query-input"
+                    class="query-input"
+                    placeholder="e.g., How do I center a div in CSS?"
+                    autocomplete="off"
+                    required
+                    aria-label="Enter your question"
+                >
+                <button type="submit" class="btn btn-primary" id="generate-btn">
+                    <span>Generate Link</span>
+                    <svg class="btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </form>
+
+            <footer class="footer">
+                <p>Inspired by <a href="https://lmgtfy.app" target="_blank" rel="noopener">LMGTFY</a> and <a href="https://henryabra.github.io/lmctfy" target="_blank" rel="noopener">LMCTFY</a></p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Playback View -->
+    <div id="playback" class="view hidden">
+        <!-- Stage 1: Branding -->
+        <div id="stage-branding" class="stage stage-branding hidden">
+            <div class="branding-content">
+                <img src="assets/perplexity-logo.svg" alt="Perplexity" class="branding-logo">
+                <h2 class="branding-title">Perplexity</h2>
+            </div>
+        </div>
+
+        <!-- Stage 2: Perplexity Interface -->
+        <div id="stage-interface" class="stage stage-interface hidden">
+            <div class="browser-mockup">
+                <div class="browser-header">
+                    <div class="browser-dots">
+                        <span class="dot dot-red"></span>
+                        <span class="dot dot-yellow"></span>
+                        <span class="dot dot-green"></span>
+                    </div>
+                    <div class="browser-url">
+                        <svg class="lock-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M3 5V4C3 2.34315 4.34315 1 6 1C7.65685 1 9 2.34315 9 4V5M3 5H9M3 5C2.44772 5 2 5.44772 2 6V10C2 10.5523 2.44772 11 3 11H9C9.55228 11 10 10.5523 10 10V6C10 5.44772 9.55228 5 9 5" stroke="currentColor" stroke-linecap="round"/>
+                        </svg>
+                        <span>perplexity.ai</span>
+                    </div>
+                </div>
+                <div class="browser-content">
+                    <div class="perplexity-interface">
+                        <div class="perplexity-header">
+                            <img src="assets/perplexity-logo.svg" alt="Perplexity" class="perplexity-logo">
+                            <span class="perplexity-name">Perplexity</span>
+                        </div>
+                        <div class="perplexity-tagline">Where knowledge begins</div>
+                        <div class="search-container">
+                            <div class="search-box">
+                                <input
+                                    type="text"
+                                    id="typing-input"
+                                    class="search-input"
+                                    placeholder="Ask anything..."
+                                    readonly
+                                >
+                                <button class="search-submit" id="search-submit-btn" aria-label="Submit search">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="thinking-indicator" class="thinking-indicator hidden">
+                            <div class="thinking-dots">
+                                <span class="thinking-dot"></span>
+                                <span class="thinking-dot"></span>
+                                <span class="thinking-dot"></span>
+                            </div>
+                            <span class="thinking-text">Searching the web...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Animated Cursor -->
+            <div id="cursor" class="cursor hidden">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M5.5 3.21V20.8C5.5 21.3 6.1 21.56 6.46 21.21L10.79 16.88H19.5C20.05 16.88 20.5 16.43 20.5 15.88V3.21C20.5 2.66 20.05 2.21 19.5 2.21H6.5C5.95 2.21 5.5 2.66 5.5 3.21Z" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Stage 3: Ending -->
+        <div id="stage-ending" class="stage stage-ending hidden">
+            <div class="ending-content">
+                <h2 class="ending-title">Was that so hard?</h2>
+                <p class="ending-subtitle">Now you know how to use Perplexity!</p>
+                <div class="countdown-container">
+                    <p class="countdown-text">Redirecting in <span id="countdown">5</span> seconds...</p>
+                    <button class="btn btn-primary" id="go-now-btn">
+                        <span>Go to Perplexity Now</span>
+                        <svg class="btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skip Button -->
+        <button id="skip-btn" class="skip-btn hidden" aria-label="Skip animation">
+            Skip
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M4 3L10 8L4 13V3Z" fill="currentColor"/>
+                <rect x="11" y="3" width="2" height="10" fill="currentColor"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Share Modal -->
+    <div id="share-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-backdrop" id="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close" aria-label="Close modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 6L18 18M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <h2 id="modal-title" class="modal-title">Share This Link</h2>
+            <p class="modal-subtitle">Copy the link or share directly to your favorite platform</p>
+
+            <div class="url-container">
+                <input type="text" id="share-url" class="share-url-input" readonly aria-label="Shareable URL">
+                <button class="btn btn-secondary" id="copy-btn">
+                    <svg class="btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <rect x="5" y="5" width="9" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M11 5V3C11 2.44772 10.5523 2 10 2H3C2.44772 2 2 2.44772 2 3V10C2 10.5523 2.44772 11 3 11H5" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    <span id="copy-btn-text">Copy</span>
+                </button>
+            </div>
+
+            <div class="share-divider">
+                <span>or share via</span>
+            </div>
+
+            <div class="share-buttons">
+                <button class="share-btn share-x" id="share-x" aria-label="Share on X">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M15.27 2H17.97L11.97 8.89L19 18H13.44L9.1 12.35L4.14 18H1.43L7.84 10.65L1 2H6.69L10.62 7.19L15.27 2ZM14.29 16.36H15.79L5.78 3.55H4.17L14.29 16.36Z" fill="currentColor"/>
+                    </svg>
+                    <span>X / Twitter</span>
+                </button>
+                <button class="share-btn share-linkedin" id="share-linkedin" aria-label="Share on LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M17.5 2H2.5C2.22386 2 2 2.22386 2 2.5V17.5C2 17.7761 2.22386 18 2.5 18H17.5C17.7761 18 18 17.7761 18 17.5V2.5C18 2.22386 17.7761 2 17.5 2ZM6.75 15.5H4.25V8H6.75V15.5ZM5.5 6.93C4.67 6.93 4 6.26 4 5.43C4 4.6 4.67 3.93 5.5 3.93C6.33 3.93 7 4.6 7 5.43C7 6.26 6.33 6.93 5.5 6.93ZM16 15.5H13.5V11.75C13.5 10.79 13.48 9.55 12.17 9.55C10.84 9.55 10.64 10.61 10.64 11.69V15.5H8.14V8H10.54V9.13H10.58C10.92 8.5 11.74 7.84 12.95 7.84C15.49 7.84 16 9.5 16 11.64V15.5Z" fill="currentColor"/>
+                    </svg>
+                    <span>LinkedIn</span>
+                </button>
+                <button class="share-btn share-slack" id="share-slack" aria-label="Copy for Slack">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.5 2C6.67 2 6 2.67 6 3.5V7.5C6 8.33 6.67 9 7.5 9C8.33 9 9 8.33 9 7.5V3.5C9 2.67 8.33 2 7.5 2Z" fill="#E01E5A"/>
+                        <path d="M3.5 11C2.67 11 2 11.67 2 12.5C2 13.33 2.67 14 3.5 14H7.5C8.33 14 9 13.33 9 12.5C9 11.67 8.33 11 7.5 11H3.5Z" fill="#E01E5A"/>
+                        <path d="M12.5 2C11.67 2 11 2.67 11 3.5C11 4.33 11.67 5 12.5 5H16.5C17.33 5 18 4.33 18 3.5C18 2.67 17.33 2 16.5 2H12.5Z" fill="#36C5F0"/>
+                        <path d="M12.5 6C11.67 6 11 6.67 11 7.5V11.5C11 12.33 11.67 13 12.5 13C13.33 13 14 12.33 14 11.5V7.5C14 6.67 13.33 6 12.5 6Z" fill="#36C5F0"/>
+                        <path d="M2 7.5C2 8.33 2.67 9 3.5 9C4.33 9 5 8.33 5 7.5V3.5C5 2.67 4.33 2 3.5 2C2.67 2 2 2.67 2 3.5V7.5Z" fill="#2EB67D"/>
+                        <path d="M6 16.5C6 17.33 6.67 18 7.5 18C8.33 18 9 17.33 9 16.5C9 15.67 8.33 15 7.5 15H3.5C2.67 15 2 15.67 2 16.5C2 17.33 2.67 18 3.5 18H6V16.5Z" fill="#2EB67D"/>
+                        <path d="M16.5 11C15.67 11 15 11.67 15 12.5V16.5C15 17.33 15.67 18 16.5 18C17.33 18 18 17.33 18 16.5V12.5C18 11.67 17.33 11 16.5 11Z" fill="#ECB22E"/>
+                        <path d="M11 12.5C11 11.67 11.67 11 12.5 11C13.33 11 14 11.67 14 12.5C14 13.33 13.33 14 12.5 14H11V12.5Z" fill="#ECB22E"/>
+                    </svg>
+                    <span>Slack</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden" role="alert" aria-live="polite">
+        <span id="toast-message">Link copied to clipboard!</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/analytics.js"></script>
+    <script src="scripts/share.js"></script>
+    <script src="scripts/animation.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
