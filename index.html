@@ -159,13 +159,18 @@
                     <div class="countdown-progress">
                         <div class="countdown-progress-bar" id="countdown-progress-bar"></div>
                     </div>
-                    <p class="countdown-text">Redirecting in <span id="countdown">5</span> seconds...</p>
-                    <button class="btn btn-primary" id="go-now-btn">
-                        <span>Ask Perplexity Yourself</span>
-                        <svg class="btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
+                    <p class="countdown-text" id="countdown-text">Redirecting in <span id="countdown">5</span> seconds...</p>
+                    <div class="ending-buttons">
+                        <button class="btn btn-primary" id="go-now-btn">
+                            <span>Ask Perplexity Yourself</span>
+                            <svg class="btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <button class="btn btn-secondary" id="cancel-btn">
+                            <span>Cancel</span>
+                        </button>
+                    </div>
                     <p class="subscription-disclaimer">May require subscription</p>
                 </div>
             </div>

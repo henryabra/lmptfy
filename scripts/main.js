@@ -23,7 +23,9 @@ const App = (function() {
     let queryForm;
     let queryInput;
     let goNowBtn;
+    let cancelBtn;
     let countdownEl;
+    let countdownText;
     let progressBar;
 
     /**
@@ -36,7 +38,9 @@ const App = (function() {
         queryForm = document.getElementById('query-form');
         queryInput = document.getElementById('query-input');
         goNowBtn = document.getElementById('go-now-btn');
+        cancelBtn = document.getElementById('cancel-btn');
         countdownEl = document.getElementById('countdown');
+        countdownText = document.getElementById('countdown-text');
         progressBar = document.getElementById('countdown-progress-bar');
 
         // Set up event listeners
@@ -55,6 +59,9 @@ const App = (function() {
 
         // Go to Perplexity button
         goNowBtn.addEventListener('click', goToPerplexity);
+
+        // Cancel button
+        cancelBtn.addEventListener('click', cancelCountdown);
 
         // Handle browser back/forward
         window.addEventListener('popstate', handlePopState);
@@ -222,6 +229,35 @@ const App = (function() {
         if (countdownEl) {
             countdownEl.textContent = state.countdownValue;
         }
+    }
+
+    /**
+     * Cancel the countdown
+     */
+    function cancelCountdown() {
+        // Clear the interval
+        if (state.countdownInterval) {
+            clearInterval(state.countdownInterval);
+            state.countdownInterval = null;
+        }
+
+        // Stop progress bar animation
+        if (progressBar) {
+            const currentWidth = progressBar.offsetWidth;
+            progressBar.style.transition = 'none';
+            progressBar.style.width = `${currentWidth}px`;
+        }
+
+        // Update UI to show cancelled state
+        if (countdownText) {
+            countdownText.textContent = 'Redirect cancelled';
+            countdownText.classList.add('cancelled');
+        }
+
+        // Hide cancel button
+        cancelBtn.classList.add('hidden');
+
+        trackEvent('countdown_cancelled');
     }
 
     /**
