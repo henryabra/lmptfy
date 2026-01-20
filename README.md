@@ -1,5 +1,7 @@
 # Let Me Perplexity That For You (LMPTFY)
 
+**Live site: https://henryabra.github.io/lmptfy/**
+
 A passive-aggressive way to help people discover [Perplexity AI](https://perplexity.ai).
 
 Inspired by [LMGTFY](https://lmgtfy.app) and [LMCTFY](https://github.com/henryabra/lmctfy).
