@@ -61,14 +61,6 @@ lmptfy/
 
 ## Customization
 
-### Analytics
-
-Replace the Google Analytics ID in `index.html`:
-
-```html
-<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script>
-```
-
 ### Colors
 
 The Perplexity brand colors are defined as CSS variables in `styles/main.css`:
