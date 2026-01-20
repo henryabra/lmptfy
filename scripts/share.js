@@ -13,8 +13,10 @@ const ShareModule = (function() {
     let shareXBtn;
     let shareLinkedInBtn;
     let shareSlackBtn;
+    let sharePreviewBtn;
     let toast;
     let toastMessage;
+    let currentShareUrl = '';
 
     /**
      * Initialize the share module
@@ -30,6 +32,7 @@ const ShareModule = (function() {
         shareXBtn = document.getElementById('share-x');
         shareLinkedInBtn = document.getElementById('share-linkedin');
         shareSlackBtn = document.getElementById('share-slack');
+        sharePreviewBtn = document.getElementById('share-preview');
         toast = document.getElementById('toast');
         toastMessage = document.getElementById('toast-message');
 
@@ -59,6 +62,7 @@ const ShareModule = (function() {
         shareXBtn.addEventListener('click', shareToX);
         shareLinkedInBtn.addEventListener('click', shareToLinkedIn);
         shareSlackBtn.addEventListener('click', shareToSlack);
+        sharePreviewBtn.addEventListener('click', previewAnimation);
 
         // Select URL on focus
         shareUrlInput.addEventListener('focus', () => {
@@ -71,6 +75,7 @@ const ShareModule = (function() {
      * @param {string} url - The URL to share
      */
     function showModal(url) {
+        currentShareUrl = url;
         shareUrlInput.value = url;
         modal.classList.remove('hidden');
         shareUrlInput.focus();
@@ -199,6 +204,18 @@ const ShareModule = (function() {
                 toast.classList.add('hidden');
             }, 250);
         }, 2500);
+    }
+
+    /**
+     * Preview the animation by navigating to the share URL
+     */
+    function previewAnimation() {
+        if (currentShareUrl) {
+            hideModal();
+            // Navigate to the share URL to see the animation
+            window.location.href = currentShareUrl;
+            trackEvent('preview_clicked');
+        }
     }
 
     /**

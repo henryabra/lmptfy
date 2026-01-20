@@ -794,6 +794,11 @@ a:hover {
     }
 }
 
+.share-preview:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
 .share-x:hover {
     color: #000;
     border-color: #000;
