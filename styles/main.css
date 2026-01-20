@@ -283,6 +283,22 @@ a:hover {
     opacity: 0.7;
 }
 
+.footer .github-link {
+    margin-top: var(--spacing-md);
+}
+
+.footer .github-link a {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-text-muted);
+    transition: color var(--transition-fast);
+}
+
+.footer .github-link a:hover {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
 /* --------------------------------------------------------------------------
    Playback Stages
    -------------------------------------------------------------------------- */
