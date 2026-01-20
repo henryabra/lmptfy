@@ -251,6 +251,14 @@ a:hover {
     transform: translateY(0);
 }
 
+.btn-primary.btn-success {
+    background-color: #28CA41;
+}
+
+.btn-primary.btn-success:hover {
+    background-color: #22b339;
+}
+
 .btn-secondary {
     color: var(--color-text);
     background-color: var(--color-gray-100);
