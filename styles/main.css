@@ -796,6 +796,12 @@ a:hover {
     gap: var(--spacing-sm);
 }
 
+.url-container .btn {
+    padding: var(--spacing-md) var(--spacing-md);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
 .share-url-input {
     flex: 1;
     padding: var(--spacing-md);
@@ -960,11 +966,16 @@ a:hover {
     }
 
     .url-container {
-        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .url-container .share-url-input {
+        width: 100%;
+        flex: none;
     }
 
     .url-container .btn {
-        width: 100%;
+        flex: 1;
     }
 
     .share-buttons {
