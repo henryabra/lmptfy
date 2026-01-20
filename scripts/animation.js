@@ -6,7 +6,7 @@ const AnimationModule = (function() {
     // Configuration
     const CONFIG = {
         brandingDuration: 1500,      // How long to show branding stage
-        typingTotalDuration: 3000,   // Total time for typing animation
+        typingTotalDuration: 2000,   // Total time for typing animation (adaptive)
         minCharDelay: 30,            // Minimum delay between characters
         maxCharDelay: 150,           // Maximum delay between characters
         thinkingDuration: 1500,      // How long to show thinking indicator
