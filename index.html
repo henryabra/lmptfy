@@ -200,12 +200,20 @@
 
             <div class="url-container">
                 <input type="text" id="share-url" class="share-url-input" readonly aria-label="Shareable URL">
-                <button class="btn btn-secondary" id="copy-btn">
+                <button class="btn btn-primary" id="copy-btn">
                     <svg class="btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <rect x="5" y="5" width="9" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/>
                         <path d="M11 5V3C11 2.44772 10.5523 2 10 2H3C2.44772 2 2 2.44772 2 3V10C2 10.5523 2.44772 11 3 11H5" stroke="currentColor" stroke-width="1.5"/>
                     </svg>
                     <span id="copy-btn-text">Copy</span>
+                </button>
+                <button class="btn btn-secondary" id="share-preview" aria-label="Preview animation">
+                    <svg class="btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M9 3L13 3L13 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M13 3L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M11 9V12C11 12.5523 10.5523 13 10 13H4C3.44772 13 3 12.5523 3 12V6C3 5.44772 3.44772 5 4 5H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <span>Preview</span>
                 </button>
             </div>
 
@@ -214,13 +222,6 @@
             </div>
 
             <div class="share-buttons">
-                <button class="share-btn share-preview" id="share-preview" aria-label="Preview animation">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M10 4C5 4 1.73 7.11 1 10C1.73 12.89 5 16 10 16C15 16 18.27 12.89 19 10C18.27 7.11 15 4 10 4Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                        <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                    </svg>
-                    <span>Preview</span>
-                </button>
                 <button class="share-btn share-x" id="share-x" aria-label="Share on X">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path d="M15.27 2H17.97L11.97 8.89L19 18H13.44L9.1 12.35L4.14 18H1.43L7.84 10.65L1 2H6.69L10.62 7.19L15.27 2ZM14.29 16.36H15.79L5.78 3.55H4.17L14.29 16.36Z" fill="currentColor"/>
