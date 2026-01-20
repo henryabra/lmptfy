@@ -636,6 +636,18 @@ a:hover {
     color: var(--color-primary);
 }
 
+/* Ending Buttons */
+.ending-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.countdown-text.cancelled {
+    color: var(--color-text);
+}
+
 /* Countdown Progress Bar */
 .countdown-progress {
     width: 200px;
