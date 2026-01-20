@@ -24,6 +24,7 @@ const App = (function() {
     let queryInput;
     let goNowBtn;
     let countdownEl;
+    let progressBar;
 
     /**
      * Initialize the application
@@ -36,6 +37,7 @@ const App = (function() {
         queryInput = document.getElementById('query-input');
         goNowBtn = document.getElementById('go-now-btn');
         countdownEl = document.getElementById('countdown');
+        progressBar = document.getElementById('countdown-progress-bar');
 
         // Set up event listeners
         setupEventListeners();
@@ -191,6 +193,16 @@ const App = (function() {
     function startCountdown() {
         state.countdownValue = 5;
         updateCountdownDisplay();
+
+        // Reset and animate progress bar
+        if (progressBar) {
+            progressBar.style.transition = 'none';
+            progressBar.style.width = '100%';
+            // Force reflow
+            progressBar.offsetHeight;
+            progressBar.style.transition = 'width 5s linear';
+            progressBar.style.width = '0%';
+        }
 
         state.countdownInterval = setInterval(() => {
             state.countdownValue--;

@@ -608,6 +608,37 @@ a:hover {
     color: var(--color-primary);
 }
 
+/* Countdown Progress Bar */
+.countdown-progress {
+    width: 200px;
+    height: 4px;
+    background-color: var(--color-gray-200);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+    .countdown-progress {
+        background-color: var(--color-gray-700);
+    }
+}
+
+.countdown-progress-bar {
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-full);
+    transition: width 1s linear;
+}
+
+/* Subscription Disclaimer */
+.subscription-disclaimer {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    opacity: 0.7;
+    margin-top: var(--spacing-sm);
+}
+
 /* Skip Button */
 .skip-btn {
     position: fixed;
@@ -883,6 +914,14 @@ a:hover {
 
     .modal-content {
         padding: var(--spacing-lg);
+    }
+
+    .url-container {
+        flex-direction: column;
+    }
+
+    .url-container .btn {
+        width: 100%;
     }
 
     .share-buttons {
