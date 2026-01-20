@@ -1,0 +1,13 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Perplexity asterisk/starburst logo -->
+  <g fill="#20B8CD">
+    <!-- Vertical bar -->
+    <rect x="14" y="2" width="4" height="28" rx="2"/>
+    <!-- Horizontal bar -->
+    <rect x="2" y="14" width="28" height="4" rx="2"/>
+    <!-- Diagonal bar (top-left to bottom-right) -->
+    <rect x="14" y="2" width="4" height="28" rx="2" transform="rotate(45 16 16)"/>
+    <!-- Diagonal bar (top-right to bottom-left) -->
+    <rect x="14" y="2" width="4" height="28" rx="2" transform="rotate(-45 16 16)"/>
+  </g>
+</svg>
