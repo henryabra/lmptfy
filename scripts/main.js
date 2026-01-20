@@ -14,7 +14,7 @@ const App = (function() {
         query: '',
         isPlaybackMode: false,
         countdownInterval: null,
-        countdownValue: 5
+        countdownValue: 8
     };
 
     // DOM Elements
@@ -198,7 +198,7 @@ const App = (function() {
      * Start the countdown timer
      */
     function startCountdown() {
-        state.countdownValue = 5;
+        state.countdownValue = 8;
         updateCountdownDisplay();
 
         // Reset and animate progress bar
@@ -207,7 +207,7 @@ const App = (function() {
             progressBar.style.width = '100%';
             // Force reflow
             progressBar.offsetHeight;
-            progressBar.style.transition = 'width 5s linear';
+            progressBar.style.transition = 'width 8s linear';
             progressBar.style.width = '0%';
         }
 

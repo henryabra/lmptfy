@@ -1,5 +1,7 @@
 # Let Me Perplexity That For You (LMPTFY)
 
+**Live site: https://henryabra.github.io/lmptfy/**
+
 A passive-aggressive way to help people discover [Perplexity AI](https://perplexity.ai).
 
 Inspired by [LMGTFY](https://lmgtfy.app) and [LMCTFY](https://github.com/henryabra/lmctfy).
@@ -23,7 +25,7 @@ When someone asks you a question they could have easily searched themselves, sen
 2. Click "Generate Link" to create a shareable URL
 3. Share the link with someone who needs a gentle nudge
 4. They watch the animation showing how to use Perplexity
-5. After 5 seconds, they're redirected to Perplexity with the query pre-filled
+5. After 8 seconds, they're redirected to Perplexity with the query pre-filled
 
 ## Tech Stack
 
