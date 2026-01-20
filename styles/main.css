@@ -793,7 +793,19 @@ a:hover {
 /* URL Container */
 .url-container {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--spacing-sm);
+}
+
+.url-container .share-url-input {
+    flex: 1 1 250px;
+    min-width: 0;
+}
+
+.url-container .btn {
+    padding: var(--spacing-md) var(--spacing-md);
+    white-space: nowrap;
+    flex: 1 0 auto;
 }
 
 .share-url-input {
@@ -959,12 +971,8 @@ a:hover {
         padding: var(--spacing-lg);
     }
 
-    .url-container {
-        flex-direction: column;
-    }
-
-    .url-container .btn {
-        width: 100%;
+    .url-container .share-url-input {
+        flex-basis: 100%;
     }
 
     .share-buttons {

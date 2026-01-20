@@ -207,13 +207,12 @@ const ShareModule = (function() {
     }
 
     /**
-     * Preview the animation by navigating to the share URL
+     * Preview the animation by opening the share URL in a new tab
      */
     function previewAnimation() {
         if (currentShareUrl) {
-            hideModal();
-            // Navigate to the share URL to see the animation
-            window.location.href = currentShareUrl;
+            // Open the share URL in a new tab to preview the animation
+            window.open(currentShareUrl, '_blank');
             trackEvent('preview_clicked');
         }
     }
